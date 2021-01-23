@@ -205,14 +205,14 @@ var data =
 }
 
 // Set the dimensions and margins of the diagram
-var margin = { top: 20, right: 90, bottom: 30, left: 90 },
+var margin = { top: 20, right: 90, bottom: 30, left: 90 }, //left90
     width = 960 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+    height = 800 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 // appends a 'group' element to 'svg'
 // moves the 'group' element to the top left margin
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#treeArea").append("svg")
     .attr("width", width + margin.right + margin.left)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
@@ -256,7 +256,9 @@ function update(source) {
         links = treeData.descendants().slice(1);
 
     // Normalize for fixed-depth.
-    nodes.forEach(function (d) { d.y = d.depth * 180 });
+    nodes.forEach(function (d) {
+        d.y = d.depth * 240
+    });
 
     // ****************** Nodes section ***************************
 
@@ -271,6 +273,7 @@ function update(source) {
         .attr("transform", function (d) {
             return "translate(" + source.y0 + "," + source.x0 + ")";
         })
+        .style("fill","#5bc0de")
         .on('click', click);
 
     // Add Circle for the nodes
@@ -281,7 +284,7 @@ function update(source) {
         .attr('class', 'node')
         .attr('r', 1e-6)
         .style("fill", function (d) {
-            return d._children ? "lightsteelblue" : "#fff";
+            return d._children ? "lightsteelblue" : "#5bc0de";
         })
 
     // Add labels for the nodes
@@ -309,7 +312,7 @@ function update(source) {
     nodeUpdate.select('circle.node')
         .attr('r', 10)
         .style("fill", function (d) {
-            return d._children ? "lightsteelblue" : "#fff";
+            return d._children ? "lightsteelblue" : "#5bc0de";
         })
         .attr('cursor', 'pointer');
 

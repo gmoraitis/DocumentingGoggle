@@ -1,20 +1,22 @@
+
 body {
-    padding: 10%;
-    background-color: whitesmoke;
+    padding: 1%;
+    background-color: black !important;
 }
 
 .node circle {
-    fill: #fff;
-    stroke: steelblue;
-    stroke-width: 1px;
+    fill:#5bc0de;
+    stroke:#5bc0de;
+    stroke-width: 2px;
 }
 
 .node text {
-    font: 11px sans-serif;
+    font: 12px sans-serif;
+    /* stroke: rgb(2, 6, 245); */
 }
 
 .link {
     fill: none;
-    stroke: #ccc;
+    stroke:#5bc0de;
     stroke-width: 1px;
 }
