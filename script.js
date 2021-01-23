@@ -1,3 +1,4 @@
+//Data object with links
 var data =
 {
     "name": "Google",
@@ -8,14 +9,24 @@ var data =
                 {
                     "name": "Search tools",
                     "children": [
-                        { "name": "Google Search", "size": 3938, "url": "http://www.google.co.uk" },
-                        { "name": "Google Alerts", "value": 3812, "url": "https://www.google.com/alerts" },
-                        { "name": "HierarchicalCluster", "value": 6714 },
-                        { "name": "MergeEdge", "value": 743 }
+                        { "name": "Google Search", "url": "http://www.google.co.uk" },
+                        { "name": "Google Alerts", "url": "https://www.google.com/alerts" },
+                        { "name": "Google Arts & Culture", "url": "https://artsandculture.google.com/" },
+                        { "name": "Google Bookmarks", "url": "https://www.google.com/bookmarks/" },
+                        { "name": "Google Books", "url": "https://books.google.com/" },
+                        { "name": "Google Dataset Search", "url": "https://datasetsearch.research.google.com/" },
+                        { "name": "Google Finance", "url": "https://google.com/finance" },
+                        { "name": "Google Flights", "url": "https://www.google.com/flights" },
+                        { "name": "Google Images", "url": "https://images.google.com/" },
+                        { "name": "Google News", "url": "https://news.google.com/" },
+                        { "name": "Google Patents", "url": "https://patents.google.com/" },
+                        { "name": "Google Scholar", "url": "http://scholar.google.com/" },
+                        { "name": "Google Shopping", "url": "https://google.com/shopping" },
+                        { "name": "YouTube", "url": "https://www.youtube.com/" },
                     ]
                 },
                 {
-                    "name": "graph",
+                    "name": "Advertising services",
                     "children": [
                         { "name": "BetweennessCentrality", "value": 3534 },
                         { "name": "LinkDistance", "value": 5731 },
@@ -25,7 +36,25 @@ var data =
                     ]
                 },
                 {
-                    "name": "optimization",
+                    "name": "Communication and publishing tools",
+                    "children": [
+                        { "name": "AspectRatioBanker", "value": 7074 }
+                    ]
+                },
+                {
+                    "name": "Map-related products",
+                    "children": [
+                        { "name": "AspectRatioBanker", "value": 7074 }
+                    ]
+                },
+                {
+                    "name": "Statistical tools",
+                    "children": [
+                        { "name": "AspectRatioBanker", "value": 7074 }
+                    ]
+                },
+                {
+                    "name": "Business-oriented products",
                     "children": [
                         { "name": "AspectRatioBanker", "value": 7074 }
                     ]
@@ -35,31 +64,7 @@ var data =
         {
             "name": "Developer tools",
             "children": [
-                { "name": "Easing", "value": 17010 },
-                { "name": "FunctionSequence", "value": 5842 },
-                {
-                    "name": "interpolate",
-                    "children": [
-                        { "name": "ArrayInterpolator", "value": 1983 },
-                        { "name": "ColorInterpolator", "value": 2047 },
-                        { "name": "DateInterpolator", "value": 1375 },
-                        { "name": "Interpolator", "value": 8746 },
-                        { "name": "MatrixInterpolator", "value": 2202 },
-                        { "name": "NumberInterpolator", "value": 1382 },
-                        { "name": "ObjectInterpolator", "value": 1629 },
-                        { "name": "PointInterpolator", "value": 1675 },
-                        { "name": "RectangleInterpolator", "value": 2042 }
-                    ]
-                },
-                { "name": "ISchedulable", "value": 1041 },
-                { "name": "Parallel", "value": 5176 },
-                { "name": "Pause", "value": 449 },
-                { "name": "Scheduler", "value": 5593 },
-                { "name": "Sequence", "value": 5534 },
-                { "name": "Transition", "value": 9201 },
-                { "name": "Transitioner", "value": 19975 },
-                { "name": "TransitionEvent", "value": 1116 },
-                { "name": "Tween", "value": 6006 }
+                { "name": "Security tools", "value": 17010 },
             ]
         },
         {
@@ -198,9 +203,6 @@ var data =
         }
     ]
 }
-console.log(typeof (data));
-
-
 
 // Set the dimensions and margins of the diagram
 var margin = { top: 20, right: 90, bottom: 30, left: 90 },
