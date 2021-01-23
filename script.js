@@ -8,8 +8,8 @@ var data =
                 {
                     "name": "Search tools",
                     "children": [
-                        { "name": "AgglomerativeCluster", "size": 3938, "url": "http://www.google.co.uk" },
-                        { "name": "CommunityStructure", "value": 3812 },
+                        { "name": "Google Search", "size": 3938, "url": "http://www.google.co.uk" },
+                        { "name": "Google Alerts", "value": 3812, "url": "https://www.google.com/alerts" },
                         { "name": "HierarchicalCluster", "value": 6714 },
                         { "name": "MergeEdge", "value": 743 }
                     ]
@@ -263,7 +263,8 @@ function update(source) {
         .data(nodes, function (d) { return d.id || (d.id = ++i); });
 
     // Enter any new modes at the parent's previous position.
-    var nodeEnter = node.enter().append('g')
+    var nodeEnter = node.enter()
+        .append('g')
         .attr('class', 'node')
         .attr("transform", function (d) {
             return "translate(" + source.y0 + "," + source.x0 + ")";
@@ -271,63 +272,15 @@ function update(source) {
         .on('click', click);
 
     // Add Circle for the nodes
-    nodeEnter.append('circle')
+    nodeEnter.append('a')
+        .attr("xlink:href", function (d) { return d.data.url; })
+        .attr("target", "_blank")
+        .append('circle')
         .attr('class', 'node')
         .attr('r', 1e-6)
         .style("fill", function (d) {
             return d._children ? "lightsteelblue" : "#fff";
         })
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
-    // node.append("text")
-    //     .attr("dx", function (d) { return d.children ? -8 : 8; })
-    //     .attr("dy", 3)
-    //     .attr("text-anchor", function (d) { return d.children ? "end" : "start"; })
-    //     .text(function (d) { return d.name; });
-
-    // node.each(function (d) {
-    //     var thisNode = d3.select(this);
-    //     if (!d.children) {
-    //         thisNode.append("a")
-    //             .attr("xlink:href", function (d) { return d.url; })
-    //             .append("text")
-    //             .attr("dx", 8)
-    //             .attr("dy", 3)
-    //             .attr("text-anchor", "start")
-    //             .text(function (d) { return d.name; });
-    //     } else {
-    //         thisNode.append("text")
-    //             .attr("dx", -8)
-    //             .attr("dy", 3)
-    //             .attr("text-anchor", "end")
-    //             .text(function (d) { return d.name; });
-    //     }
-    // });
-    //new code with link
-    // nodeEnter.append("a")
-    //     .append("svg:text")
-    //     .attr("xlink:href", function (data) { return data.url })
-    //     .attr("x", function (d) { return d.children || d._children ? -10 : 10; })
-    //     .attr("dy", ".35em")
-    //     .attr("text-anchor", function (d) { return d.children || d._children ? "end" : "start"; })
-    //     .text(function (d) { return d.name; })
-    //     .style("fill-opacity", 1e-6);
-    //
-    //
-    nodeEnter
-        .append("a")
-        .attr("xlink:href", function (d) { return data + d.url; })
-        .append("rect")
-        .attr("class", "clickable")
-        .attr("y", -6)
-        .attr("x", function (d) { return d.children || d._children ? -60 : 10; })
-        .attr("width", 50) //2*4.5)
-        .attr("height", 12)
-        .style("fill", "lightsteelblue")
-        .style("fill-opacity", .3)        // set to 1e-6 to make transparent          
-        ;
-    /////////////////////////////////////////////////////////////////////////////////////////////////
-
 
     // Add labels for the nodes
     nodeEnter.append('text')
@@ -357,7 +310,6 @@ function update(source) {
             return d._children ? "lightsteelblue" : "#fff";
         })
         .attr('cursor', 'pointer');
-
 
     // Remove any exiting nodes
     var nodeExit = node.exit().transition()
@@ -436,4 +388,3 @@ function update(source) {
     }
 
 }
-// });
