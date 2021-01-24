@@ -3,7 +3,6 @@
 body {
     padding: 2%;
     background-color: black;
-    
 }
 
 header {
@@ -15,7 +14,6 @@ section {
 }
 
 #links {
-    color: rgba(255, 94, 94, 0.582) !important;
     text-decoration: none;
 }
 
@@ -34,7 +32,7 @@ section {
 
 .link {
     fill: none;
-    stroke: #34a853;
+    stroke: #4285f4;
     stroke-width: 0.8px;
 }
 
@@ -56,10 +54,4 @@ section {
     color: #34a853;
 }
 
-/* Toggle mode */
 
-.dark_mode{
-    background-color:black;
-    color: rgb(182, 178, 178);
-    
-}

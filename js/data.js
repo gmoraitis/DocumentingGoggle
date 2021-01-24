@@ -302,7 +302,7 @@ function update(source) {
         .attr("transform", function (d) {
             return "translate(" + source.y0 + "," + source.x0 + ")";
         })
-        .style("fill", "#4285f4")
+        .style("fill", "#6c757d")
         .on('click', click);
 
     // Add Circle for the nodes
