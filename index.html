@@ -4,10 +4,12 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
     <!-- Custom CSS -->
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -40,9 +42,14 @@
     <!-- Header Image -->
     <div class="container">
         <div class="row">
-            <header class="text-white">
+            <header>
                 <div class="container text-center">
-                    <img src="./img/googleimg.jpg" class="img-fluid w-50 p-3" alt="Responsive image">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <img src="./img/googleimg.jpg" class="img-fluid w-50 p-3" alt="Responsive image">
+                        </div>
+                    </div>
+            </header>
             </header>
         </div>Î
     </div>
@@ -50,7 +57,7 @@
     <!-- DataTree -->
     <div class="container">
         <div class="row">
-            <div class="col-xs-12" id="treeArea">
+            <div class="col-xs-12 col-sm-6" id="treeArea">
             </div>
         </div>
     </div>
@@ -59,7 +66,7 @@
     <section>
         <div class="container text-info">
             <div class="row">
-                <div class="col-lg-8 mx-auto">
+                <div class="col-lg-8 mx-auto col-sm-6">
                     <h2>Project</h2>
 
                     <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -91,5 +98,5 @@
     <!-- D3.js library -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <!-- Custom javascript -->
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
