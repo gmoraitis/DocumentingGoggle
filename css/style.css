@@ -2,15 +2,16 @@
 
 body {
     padding: 2%;
-    background-color: black !important;
+    background-color: black;
+    
 }
+
 header {
     padding: 156px 0 100px;
 }
 
 section {
     padding: 150px 0;
-    background-color: black;
 }
 
 #links {
@@ -53,4 +54,12 @@ section {
 
 .thegreen {
     color: #34a853;
+}
+
+/* Toggle mode */
+
+.dark_mode{
+    background-color:black;
+    color: rgb(182, 178, 178);
+    
 }
