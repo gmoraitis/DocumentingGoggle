@@ -273,7 +273,7 @@ function update(source) {
         .attr("transform", function (d) {
             return "translate(" + source.y0 + "," + source.x0 + ")";
         })
-        .style("fill","#5bc0de")
+        .style("fill","#4285f4")
         .on('click', click);
 
     // Add Circle for the nodes
@@ -284,7 +284,7 @@ function update(source) {
         .attr('class', 'node')
         .attr('r', 1e-6)
         .style("fill", function (d) {
-            return d._children ? "lightsteelblue" : "#5bc0de";
+            return d._children ? "theblue" : "#4285f4";
         })
 
     // Add labels for the nodes
@@ -311,9 +311,9 @@ function update(source) {
     // Update the node attributes and style
     nodeUpdate.select('circle.node')
         .attr('r', 10)
-        .style("fill", function (d) {
-            return d._children ? "lightsteelblue" : "#5bc0de";
-        })
+        // .style("fill", function (d) {
+        //     return d._children ? "thegreen" : "#34a853";
+        // })
         .attr('cursor', 'pointer');
 
     // Remove any exiting nodes
@@ -330,7 +330,10 @@ function update(source) {
 
     // On exit reduce the opacity of text labels
     nodeExit.select('text')
-        .style('fill-opacity', 1e-6);
+        .style('fill-opacity', 1e-6)
+        .style("fill", function (d) {
+            return d._children ? "thegreen" : "#34a853";
+        });
 
     // ****************** links section ***************************
 

@@ -1,22 +1,45 @@
-
 body {
     padding: 1%;
     background-color: black !important;
 }
 
 .node circle {
-    fill:#5bc0de;
-    stroke:#5bc0de;
+    fill: #ea4335;
+    stroke: #fbbc05;
     stroke-width: 2px;
 }
 
 .node text {
-    font: 12px sans-serif;
+    font: 14px sans-serif;
     /* stroke: rgb(2, 6, 245); */
 }
 
 .link {
     fill: none;
-    stroke:#5bc0de;
-    stroke-width: 1px;
+    stroke: #34a853;
+    stroke-width: 0.8px;
 }
+
+/* Google Letters */
+
+.theblue {
+    color: #4285f4;
+}
+
+.thered {
+    color: #ea4335;
+}
+
+.theyellow {
+    color: #fbbc05;
+}
+
+.thegreen{
+    color: #34a853;
+}
+
+
+#links {
+    color: rgba(255, 94, 94, 0.582) !important;
+    text-decoration: none;
+  }
