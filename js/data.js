@@ -1,30 +1,3 @@
-// UNUSED RESPONSIVE FUNCTION
-// function responsivefy(svg) {
-//     // get container + svg aspect ratio
-//     var container = d3.select(svg.node().parentNode),
-//         width = parseInt(svg.style("width")),
-//         height = parseInt(svg.style("height")),
-//         aspect = width / height;
-
-//     // add viewBox and preserveAspectRatio properties,
-//     // and call resize so that svg resizes on inital page load
-//     svg.attr("viewBox", "0 0 " + width + " " + height)
-//         .attr("perserveAspectRatio", "xMinYMid")
-//         .call(resize);
-
-//     // to register multiple listeners for same event type, 
-//     // you need to add namespace, i.e., 'click.foo'
-//     // necessary if you call invoke this function for multiple svgs
-//     // api docs: https://github.com/mbostock/d3/wiki/Selections#on
-//     d3.select(window).on("resize." + container.attr("id"), resize);
-
-//     // get width of container and resize svg to fit it
-//     function resize() {
-//         var targetWidth = parseInt(container.style("width"));
-//         svg.attr("width", targetWidth);
-//         svg.attr("height", Math.round(targetWidth / aspect));
-//     }
-// }
 
 //Data object with links
 var data =
@@ -56,17 +29,44 @@ var data =
                 {
                     "name": "Advertising services",
                     "children": [
-                        { "name": "BetweennessCentrality", "value": 3534 },
-                        { "name": "LinkDistance", "value": 5731 },
-                        { "name": "MaxFlowMinCut", "value": 7840 },
-                        { "name": "ShortestPaths", "value": 5914 },
-                        { "name": "SpanningTree", "value": 3416 }
+                        { "name": "Google Ads", "url": "https://ads.google.com/" },
+                        { "name": "AdMob", "url": "https://www.google.com/admob/" },
+                        { "name": "Google AdSense", "url": "https://www.google.com/adsense" },
+                        { "name": "Google Ad Manager", "url": "https://admanager.google.com/home" },
+                        { "name": "Tag management system", "url": "https://en.wikipedia.org/wiki/Tag_management_system" }
                     ]
                 },
                 {
                     "name": "Communication and publishing tools",
                     "children": [
-                        { "name": "AspectRatioBanker", "value": 7074 }
+                        { "name": "Blogger", "url": "https://www.blogger.com/" },
+                        { "name": "FeedBurner", "url": "https://feedburner.google.com/" },
+                        { "name": "Gmail", "url": "https://mail.google.com/" },
+                        { "name": "Google Account", "url": "https://myaccount.google.com/" },
+                        { "name": "Google Calendar", "url": "https://www.google.com/calendar/about" },
+                        { "name": "Google Chat", "url": "https://chat.google.com/" },
+                        { "name": "Google Charts", "url": "https://developers.google.com/chart" },
+                        { "name": "Google Classroom", "url": "https://classroom.google.com/" },
+                        { "name": "Google Currents", "url": "https://workspace.google.com/products/currents/" },
+                        {
+                            "name": "Google Docs Editors",
+                            "children":
+                                [{ "name": "Google Docs", "url": "https://www.google.com/docs/about/" },
+                                { "name": "Google Sheets", "url": "https://www.google.com/sheets/about/" },
+                                { "name": "Google Slides", "url": "https://www.google.com/slides/about/" },
+                                { "name": "Google Drawings", "url": "https://docs.google.com/drawings" },
+                                { "name": "Google Forms", "url": "https://docs.google.com/forms" },
+                                { "name": "Google Sites", "url": "https://sites.google.com/" },
+                                { "name": "Google Keep", "url": "https://www.google.com/keep/" },
+                                ]
+                        },
+                        { "name": "Google Domains", "url": "https://domains.google/" },
+                        { "name": "Google Drive", "url": "https://drive.google.com/" },
+                        { "name": "Google Fonts", "url": "https://fonts.google.com/" },
+                        { "name": "Google Groups", "url": "https://groups.google.com/" },
+                        { "name": "Google Meet", "url": "https://meet.google.com/" },
+                        { "name": "Google Translate", "url": "https://translate.google.com/" },
+                        { "name": "Google Voice", "url": "https://voice.google.com/" },
                     ]
                 },
                 {
@@ -234,8 +234,8 @@ var data =
 
 // Set the dimensions and margins of the diagram
 var margin = { top: 20, right: 90, bottom: 30, left: 90 }, //left90
-    width = 960 - margin.left - margin.right,
-    height = 800 - margin.top - margin.bottom;
+    width = 1200 - margin.left - margin.right,
+    height = 900 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 // appends a 'group' element to 'svg'
@@ -244,7 +244,7 @@ var svg = d3.select("#treeArea").append("svg")
     .attr("width", width + margin.right + margin.left)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
-    // .call(responsivefy)
+    // .call(responsivefy) //responsive function.
     .attr("transform", "translate("
         + margin.left + "," + margin.top + ")");
 
@@ -320,7 +320,7 @@ function update(source) {
     nodeEnter.append('text')
         .attr("dy", ".35em")
         .attr("x", function (d) {
-            return d.children || d._children ? -13 : 13;
+            return d.children || d._children ? -12 : 12;
         })
         .attr("text-anchor", function (d) {
             return d.children || d._children ? "end" : "start";
